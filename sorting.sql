@@ -1,14 +1,10 @@
-SELECT
-    *
+SELECT *
 FROM sales
 ORDER BY quantity;
 
-SELECT
-    *
+SELECT *
 FROM sales
-ORDER BY quantity DESC;
+ORDER BY sale_date DESC
+LIMIT 3;
 
-SELECT
-    *
-FROM sales
-ORDER BY customer_name;
+

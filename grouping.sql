@@ -1,21 +1,20 @@
 SELECT
-    city, COUNT(*)
+    city, SUM(quantity) as number_quantity
 FROM sales
-GROUP BY city;
-
-SELECT
-    product, COUNT(*)
-FROM sales
-GROUP BY product;
+GROUP BY city
+ORDER BY number_quantity DESC;
 
 
 SELECT
-    product, SUM(quantity * price)
+    product, SUM(price * quantity) total_price
 FROM sales
-GROUP BY product;
+GROUP BY product
+ORDER BY total_price DESC;
 
 SELECT
     city, COUNT(*) AS soni
 FROM sales
 GROUP BY city
-HAVING COUNT(*) >= 2;
+HAVING COUNT(*) >= 2
+ORDER BY soni DESC
+;
